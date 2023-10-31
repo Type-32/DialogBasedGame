@@ -48,6 +48,9 @@ class Dialogue:
                 return self.dialogues[i]
         return -1
 
+def initializeColorCodes():
+    if sys.platform == "win32":
+        os.system('')
 
 def pause(): # A simple pause function
     input(processStyle("Press return to continue...", style_name='italic'))

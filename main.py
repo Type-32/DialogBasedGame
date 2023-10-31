@@ -3,8 +3,7 @@
 from dialogue import Dialogue
 import dialogue as dl
 import sys
-import os
-os.system('')
+dl.initializeColorCodes()
 
 # Initialization
 money: int = 100
