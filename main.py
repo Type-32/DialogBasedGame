@@ -1,13 +1,17 @@
+# Compatibility with Python Interpreter >3.6
+# Before running this program, make sure you've added the TERM environment variable with the value xterm-color.
 from dialogue import Dialogue
 import dialogue as dl
 import sys
+import os
+os.system('')
 
 # Initialization
 money: int = 100
 choices: int = 0
 
 # Initialize Dialogue
-dl.delayedPrint(f"Currently, you have {money} units of money. Your choices result in the loss or gain of your money.", 3, 1)
+dl.delayedPrint(f'Currently, you have {money} units of money. Your choices result in the loss or gain of your money.', 3, 1)
 dl.delayedPrint(dl.processStyle("Choose Wisely.", 'red', 'italic'), 2, 1)
 dl.loader(3)
 dl.clearScreen()
@@ -64,15 +68,15 @@ else:
     sys.exit()
 
 print()
-dl.delayedPrint(f"You currently have {dl.processStyle(str(money), color_name='yellow', style_name='bold')} units of money.", 2, 1)
+dl.delayedPrint(f'You currently have {dl.processStyle(str(money), color_name="yellow", style_name="bold")} units of money.', 2, 1)
 dl.loader(3, "Loading Dialogues")
 dl.clearScreen()
 
-dl.delayedPrint(f"Input the floor of your {dl.processStyle("first", 'blue')} class: ", returnLine=False)
+dl.delayedPrint(f'Input the floor of your {dl.processStyle("first", "blue")} class: ', returnLine=False)
 class1 = int(input())
-dl.delayedPrint(f"Input the floor of your {dl.processStyle("second", 'yellow')} class: ", returnLine=False)
+dl.delayedPrint(f'Input the floor of your {dl.processStyle("second", "yellow")} class: ', returnLine=False)
 class2 = int(input())
-dl.delayedPrint(f"Input the floor of your {dl.processStyle("third", 'purple')} class: ", returnLine=False)
+dl.delayedPrint(f'Input the floor of your {dl.processStyle("third", "purple")} class: ', returnLine=False)
 class3 = int(input())
 
 dif1 = abs(class1 - class2)
@@ -80,17 +84,17 @@ dif2 = abs(class2 - class3)
 dif3 = abs(floorNum - class1)
 
 if dif1 + dif2 + dif3 + class3 > 15:
-    dl.delayedPrint(f"Since there's too much stairs for you to climb, you have been deducted {dl.processStyle("20 units of money.", 'orange')}", 3, 1)
+    dl.delayedPrint(f'Since there\'s too much stairs for you to climb, you have been deducted {dl.processStyle("20 units of money.", "orange")}', 3, 1)
     money -= 20
 else:
-    dl.delayedPrint(dl.processStyle("You have survived from climbing the stairs in the morning!", 'green'), 3, 1)
+    dl.delayedPrint(dl.processStyle("You have survived from climbing the stairs in the morning!", "green"), 3, 1)
 
 print()
-dl.delayedPrint(f"You currently have {dl.processStyle(str(money), color_name='yellow', style_name='bold')} units of money.", 2, 1)
+dl.delayedPrint(f'You currently have {dl.processStyle(str(money), color_name="yellow", style_name="bold")} units of money.', 2, 1)
 dl.loader(3, "Loading Dialogues")
 dl.clearScreen()
 
-lunch: Dialogue = Dialogue(f"Now that you've finished your last class of the day, choose a way to {dl.processStyle("have", 'blue')}/{dl.processStyle("obtain", 'orange')} your lunch:",
+lunch: Dialogue = Dialogue(f'Now that you\'ve finished your last class of the day, choose a way to {dl.processStyle("have", "blue")}/{dl.processStyle("obtain", "orange")} your lunch:',
    [
        "Steal other students' takeaway",
        "Order food takeaway",
@@ -115,7 +119,7 @@ else:
 choices += 1
 
 print()
-dl.delayedPrint(f"You currently have {dl.processStyle(str(money), color_name='yellow', style_name='bold')} units of money.", 2, 1)
+dl.delayedPrint(f'You currently have {dl.processStyle(str(money), color_name="yellow", style_name="bold")} units of money.', 2, 1)
 dl.loader(3, "Loading Dialogues")
 dl.clearScreen()
 
@@ -147,15 +151,15 @@ else:
 choices += 1
 
 print()
-dl.delayedPrint(f"You currently have {dl.processStyle(str(money), color_name='yellow', style_name='bold')} units of money.", 2, 1)
+dl.delayedPrint(f'You currently have {dl.processStyle(str(money), color_name="yellow", style_name="bold")} units of money.', 2, 1)
 dl.loader(5, "Processing Results")
 dl.clearScreen()
 
 if money > 0:
-    dl.delayedPrint(f"You have survived SCIE! Your current amount of money is {dl.processStyle(str(money), color_name='green', style_name='bold')}.", 3, 1)
+    dl.delayedPrint(f'You have survived SCIE! Your current amount of money is {dl.processStyle(str(money), color_name="green", style_name="bold")}.', 3, 1)
 else:
-    dl.delayedPrint(f"Your total amount of money is {dl.processStyle(str(money), color_name='orange', style_name='bold')}.", 3, 1, False)
-    dl.delayedPrint(dl.processStyle(f" Watch out from now on, since you now owe SCIE {money} units of money.", 'red', 'italic'), 3, 1)
+    dl.delayedPrint(f'Your total amount of money is {dl.processStyle(str(money), color_name="orange", style_name="bold")}.', 3, 1, False)
+    dl.delayedPrint(dl.processStyle(f' Watch out from now on, since you now owe SCIE {money} units of money.', "red", "italic"), 3, 1)
 
-dl.delayedPrint(f"You made {dl.processStyle(str(choices), 'aqua', 'underlined')} big choices in SCIE today.", 3, 1)
+dl.delayedPrint(f'You made {dl.processStyle(str(choices), "aqua", "underlined")} big choices in SCIE today.', 3, 1)
 
